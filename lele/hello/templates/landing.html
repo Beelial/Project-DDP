@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+    <section class="max-w-7xl mx-auto px-6 mt-10">
+        <div class="relative rounded-2xl overflow-hidden">
+            <img src="{% static 'assets/land.jpg'%}" class="w-full h-[420px] object-cover">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center">
+                <div class="px-6 max-w-2xl ">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Revolusi Budidaya Lele Modern
+                    </h1>
+                    <p class="text-gray-200 mb-6">Menghadirkan kualitas terbaik dari kolam yang terjaga ke meja makan Anda
+                        dengan teknologi berkelanjutan dan ramah lingkungan.
+                    </p>
+                    <a class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium" href="{% url 'login' %}">Masuk</a>
+                </div>    
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 mt-20">
+        <h2 class="text-2xl font-bold mb-2">Keunggulan Kami</h2>
+        <p class="text-gray-600 mb-10">Mengapa memilih hasil panen dari peternakan kami?</p>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gray-50 rounded-xl p-6 border-2 border-gray-400 hover:border-blue-500 transition">
+                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full mb-4 material-symbols-outlined p-2">grass</div>
+                <h3 class="font-semibold mb-2">Pakan Organik</h3>
+                <p class="text-sm text-gray-600">Nutrisi alami tanpa bahan kimia berbahaya untuk ikan yang lebih sehat.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6 border-2 border-gray-400 hover:border-blue-500 transition">
+                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full mb-4 material-symbols-outlined p-2">water_drop</div>
+                <h3 class="font-semibold mb-2">Teknologi Bioflok</h3>
+                <p class="text-sm text-gray-600">Sistem pengolahan air canggih yang hemat air dan menjaga ekosistem.</p>
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-6 border-2 border-gray-400 hover:border-blue-500 transition">
+                <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full mb-4 material-symbols-outlined p-2">fertile</div>
+                <h3 class="font-semibold mb-2">Bibit Unggul</h3>
+                <p class="text-sm text-gray-600">Bibit pilihan tahan penyakit untuk hasil panen maksimal.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 mt-20 mb-30">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h4 class="text-sm font-bold uppercase tracking-widest text-blue-500 mb-3">FILOSOFI KAMI</h4>
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight mb-6">Lebih dari sekadar ikan.</h1>
+                <p class="md:text-lg text-gray-600 leading-relaxed max-w-xl">
+                    Kami berkomitmen pada keberlanjutan ekosistem dan pemberdayaan mitra petani lokal. Setiap langkah kami didedikasikan untuk masa depan pangan yang lebih baik, lebih bersih, dan lebih sehat untuk semua.</p>
+                    <button class="border-2 px-6 py-2 rounded-xl hover:bg-blue-400 text-white border-blue-500 font-semibold text-blue-600 bg-blue-600 mt-6 cursor-pointer"><a href="{% url 'tentang' %}">Tentang Kami</a></button>
+            </div>
+            <div class="md:w-1/2 w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                <img class="w-full h-full object-cover" src="https://img.okezone.com/content/2020/10/11/455/2291897/polisi-ini-sukses-budidaya-lele-dengan-sistem-bioflok-faasstcWUM.jpg" alt="lele bioflok">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-blue-50 py-10">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-2 sm:grid-cols-3 text-center gap-y-6 sm:gap-y-0">
+                <div class="sm:border-r border-blue-200">
+                    <h2 class="text-4xl font-extrabold text-blue-700">10,000+</h2>
+                    <p class="text-sm text-gray-700 mt-1">KG PANEN/BULAN</p>
+                </div>
+                <div class="col-start-1 row-start-2 sm:col-auto sm:row-auto sm:border-r border-blue-200">
+                    <h2 class="text-4xl font-extrabold text-blue-700">500</h2>
+                    <p class="text-sm text-gray-700 mt-1">Ton/Tahun</p>
+                </div>
+                <div class="col-start-2 row-start-1 row-span-2 flex flex-col items-center justify-center">
+                    <h2 class="text-4xl font-extrabold text-blue-700">25+</h2>
+                    <p class="text-sm text-gray-700 mt-1">Tahun Pengalaman</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}

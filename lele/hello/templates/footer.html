@@ -1,0 +1,103 @@
+{% load static %}
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <!-- Footer Section -->
+        <footer class="bg-[#0b0f19] text-white pt-16 pb-8 px-6 lg:px-40">
+            <div class="max-w-[1200px] mx-auto">
+                <!-- Main Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start">
+                    <!-- Column 1: Brand -->
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-2">
+                            <div class="bg-primary p-2 rounded-lg">
+                                <img src="{% static 'assets/5.png'%}" alt="" class=" w-10 h-10 object-contain">
+                            </div>
+                            <span class="text-2xl font-black tracking-tight">Lele Fresh</span>
+                        </div>
+                        <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+                            Providing the highest quality, sustainably farmed catfish directly to your kitchen. We
+                            ensure freshness from farm to table with every order.
+                        </p>
+                    </div>
+                    <!-- Column 2: Quick Links -->
+                    <div class="flex flex-col gap-6">
+                        <h2 class="text-lg font-bold text-white relative inline-block">
+                            Quick Links
+                            <span class="absolute -bottom-1 left-0 w-8 h-1 bg-primary rounded-full"></span>
+                        </h2>
+                        <nav class="flex flex-col gap-3">
+                            <a class="text-gray-400 hover:text-primary transition-colors duration-200 text-sm flex items-center gap-2"
+                                href="{% url 'home'%}">
+                                <span class="material-symbols-outlined text-xs">chevron_right</span> Beranda
+                            </a>
+                            <a class="text-gray-400 hover:text-primary transition-colors duration-200 text-sm flex items-center gap-2"
+                                href="{% url 'tentang' %}">
+                                <span class="material-symbols-outlined text-xs">chevron_right</span> Tentang Kami
+                            </a>
+                            <a class="text-gray-400 hover:text-primary transition-colors duration-200 text-sm flex items-center gap-2"
+                                href="{% url 'produk' %}">
+                                <span class="material-symbols-outlined text-xs">chevron_right</span> Produk
+                            </a>
+                        </nav>
+                    </div>
+                    <!-- Column 4: Contact Info -->
+                    <div class="flex flex-col gap-6">
+                        <h2 class="text-lg font-bold text-white relative inline-block">
+                            Contact Info
+                            <span class="absolute -bottom-1 left-0 w-8 h-1 bg-primary rounded-full"></span>
+                        </h2>
+                        <div class="flex flex-col gap-4">
+                            <div class="flex gap-3 items-start">
+                                <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+                                <p class="text-gray-400 text-sm leading-normal">
+                                    123 Fish Farm Road, Aqua City, <br />West Java, Indonesia
+                                </p>
+                            </div>
+                            <div class="flex gap-3 items-center">
+                                <span class="material-symbols-outlined text-primary">call</span>
+                                <p class="text-gray-400 text-sm">+62 812-3456-789</p>
+                            </div>
+                            <div class="flex gap-3 items-center">
+                                <span class="material-symbols-outlined text-primary">mail</span>
+                                <p class="text-gray-400 text-sm">hello@lelefresh.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Divider -->
+                <div class="border-t border-gray-800 w-full mb-8"></div>
+                <!-- Bottom Bar -->
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <!-- Social Media -->
+                    <div class="flex gap-4">
+                        <a class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                            href="#">
+                            <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                            href="#">
+                            <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="w-10 h-10 rounded-lg bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors duration-300"
+                            href="#">
+                            <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.62c1.524.905 3.121 1.382 4.747 1.383h.001c5.466 0 9.912-4.444 9.915-9.913 0-2.651-1.032-5.142-2.906-7.017-1.874-1.874-4.366-2.906-7.017-2.906-5.467 0-9.913 4.446-9.915 9.915-.001 1.748.459 3.453 1.332 4.948l-.845 3.085 3.16-.83l.228.135z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                    <!-- Copyright -->
+                    <p class="text-gray-500 text-sm text-center md:text-right">
+                        © 2024 <span class="text-white font-medium">Lele Fresh</span>. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>

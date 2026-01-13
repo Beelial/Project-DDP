@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Lele Terpercaya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>
+            {% include 'navbar.html' %}
+        </div>
+
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div>
+            <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
+            <script id="tailwind-config">
+                tailwind.config = {
+                    darkMode: "class",
+                    theme: {
+                        extend: {
+                            colors: {
+                                "primary": "#135bec",
+                                "background-light": "#f6f6f8",
+                                "background-dark": "#101622",
+                            },
+                            fontFamily: {
+                                "display": ["Be Vietnam Pro", "sans-serif"]
+                            },
+                            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                        },
+                    },
+                }
+            </script>
+            {% include 'footer.html' %}
+        </div>
+    </div>
+    
+    <!-- Load Auth.js di semua halaman PERTAMA -->
+    <script src="{% static 'js/auth.js' %}"></script>
+    <!-- Navbar.js harus setelah auth.js -->
+    <script src="{% static 'js/navbar.js' %}"></script>
+</body>
+</html>

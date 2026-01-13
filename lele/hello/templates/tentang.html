@@ -1,0 +1,371 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<main
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-200">
+    <!-- Hero Section -->
+    <header class="relative w-full h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0 bg-slate-900">
+            <div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay"
+                data-alt="pristine blue ocean surface with gentle ripples"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3__PVIEImfFIT43-af5S68nkkAc_xuWAFxrgfoiNkYkphmSMxd11jDn_8EI_0WHTkn1oqjd3kkg7VPTlOcFoSvIP7PZlxPV06hnLbffrSBN49qWcV0TYe_LSg-UN0vGCZLgGg20PAAkKVeyVSA7KYwKu2HM0MQzxi-2UEVsLknqRIWF9ylpkU7NpBfdjRz4k17R9tOAu8KuWrGEFN60bQPLw-xKbQXNB1n8ElVpJii_0GbEWabiABP2BGWpHCo4I1SUhUr_WLSEnk');">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm text-xs font-bold uppercase tracking-wider mb-4 text-blue-200">
+                Est. 2000
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-tight mb-6">
+                Membudidayakan <br />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-100">Masa Depan Perternakan</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto font-light leading-relaxed">
+                Budidaya perairan berkelanjutan untuk planet yang lebih sehat. Rasakan kesegaran makanan laut yang dibudidayakan dengan penuh perhatian,
+                inovasi, dan rasa hormat yang mendalam terhadap perairan kita.
+            </p>
+        </div>
+    </header>
+    <!-- Stats Section (Bento Grid Style) -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto -mt-20 relative z-20 items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Stat Card 1 -->
+            <div
+                class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex flex-col justify-between h-48 group hover:-translate-y-1 transition-transform duration-300">
+                <div class="bg-blue-200 dark:bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center text-slate-700 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">schedule</span>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-slate-900 dark:text-white mb-1">25+</p>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Tahun Pengalaman</p>
+                </div>
+            </div>
+            <!-- Stat Card 2 -->
+            <div
+                class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex flex-col justify-between h-48 group hover:-translate-y-1 transition-transform duration-300">
+                <div
+                    class="bg-blue-200 dark:bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center text-primary mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">eco</span>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-slate-900 dark:text-white mb-1">100%</p>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium">Praktik Berkelanjutan</p>
+                </div>
+            </div>
+            <!-- Stat Card 3 -->
+            <div
+                class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex flex-col justify-between h-48 group hover:-translate-y-1 transition-transform duration-300">
+                <div
+                    class="bg-blue-200 dark:bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center text-primary mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">phishing</span>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold text-slate-900 dark:text-white mb-1">500</p>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium text-left">Setiap Ton yang di panen pertahun</p>
+                </div>
+            </div>
+            <!-- Stat Card 4 -->
+            <div
+                class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex flex-col justify-between h-48 group hover:-translate-y-1 transition-transform duration-300">
+                <div class="bg-blue-200 dark:bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center text-primary mb-4 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">sentiment_satisfied</span>
+                </div>
+                <div
+                    class="bg-white/20 w-12 h-12 rounded-full flex items-center justify-center text-white mb-4 backdrop-blur-sm">
+                    <span class="material-symbols-outlined">group</span>
+                </div>
+                <div class="relative z-10">
+                    <p class="text-4xl font-bold text-slate-900 dark:text-white mb-1">10,000+</p>
+                    <p class="text-slate-500 dark:text-slate-400 font-medium text-left">Pelanggan yang Bahagia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mission & Vision Split -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="lg:w-1/2 relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 dark:bg-blue-900/30 rounded-full z-0"></div>
+                <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/10 rounded-full z-0"></div>
+                <img alt="School of fish swimming underwater in clear blue ocean"
+                    class="relative z-10 rounded-3xl shadow-2xl w-full h-auto object-cover aspect-[4/3]"
+                    data-alt="School of fish swimming underwater in clear blue ocean"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuADYmbhWGCDCk_cw4d5zKejTYQw8nV2K0Z2U_8_HWT_eYVUzmnKiYKulsCFbigWDsJqoyb_PqW2OQm93mioCOIpPcrKxqW1ucq6eFZj38gUaEDS1scaD112QdoSHpPKFvALVqCEKMGl05Wapr4mBVowaDKeV5fkNQsUvua6cKmDzdeUxaLYTNl4afHe87ocUfBHHcRM4As6HrkOvJWmmRJWx9vp0Gb1kKDfjrFRcy3AiBfy-i8MUk25VKGufPrPIqgLz_8YVM6683if" />
+            </div>
+            <div class="lg:w-1/2">
+                <h2 class="text-primary font-bold tracking-wider uppercase text-sm mb-2">Misi Kami</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+                    Dipandu oleh Alam, <br />Didorong oleh Kualitas.
+                </h3>
+                <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed mb-6">
+                    Kami percaya pada pertanian yang menghormati lautan. Nilai-nilai inti kami mendorong setiap keputusan yang kami buat,
+                    memastikan kualitas dari telur hingga piring. Tidak seperti penangkapan ikan industri tradisional, pendekatan kami meniru
+                    ekosistem alami untuk membesarkan ikan yang lebih sehat sambil melestarikan populasi liar.
+                </p>
+                <div class="space-y-4">
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 hover:shadow-md transition-all border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
+                        <div class="bg-blue-100 dark:bg-blue-900/50 text-primary p-2 rounded-lg shrink-0">
+                            <span class="material-symbols-outlined">water_ec</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Air Bersih Inisiatif</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Sistem penyaringan kami mengembalikan
+                            air yang lebih bersih daripada saat kami menemukannya.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 hover:shadow-md transition-all border border-transparent hover:border-slate-100 dark:hover:border-slate-700">
+                        <div class="bg-blue-100 dark:bg-blue-900/50 text-primary p-2 rounded-lg shrink-0">
+                            <span class="material-symbols-outlined">science</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Nutrisi Berbasis Sains</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Pakan premium yang bersumber dari
+                            bahan-bahan berkelanjutan dan non-GMO.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core Values Cards -->
+    <section class="py-16 bg-slate-50 dark:bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Nilai Utama Kami</h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-4 max-w-2xl mx-auto">rinsip-prinsip yang menjadi landasan operasional kami dan menginspirasi inovasi kami setiap hari.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Value 1 -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 transition-colors group">
+                    <div
+                        class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">spa</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Keberlanjutan</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Meminimalkan dampak lingkungan kita dengan praktik ramah lingkungan dan energi terbarukan.
+                    </p>
+                </div>
+                <!-- Value 2 -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 transition-colors group">
+                    <div
+                        class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">verified</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Kualitas</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Makanan laut premium yang dibudidayakan dalam kondisi murni tanpa antibiotik atau hormon pertumbuhan.
+                    </p>
+                </div>
+                <!-- Value 3 -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 transition-colors group">
+                    <div
+                        class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">diversity_3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Komunitas</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Mendukung perekonomian lokal dan program pendidikan untuk membina generasi penerus.
+                    </p>
+                </div>
+                <!-- Value 4 -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 dark:hover:border-primary/50 transition-colors group">
+                    <div
+                        class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">lightbulb</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Inovasi</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                        Merintis teknologi akuakultur baru untuk hasil panen yang lebih baik dan dampak yang lebih rendah.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- History Timeline (Horizontal Scroll) -->
+    <section class="py-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex justify-between items-end">
+            <div>
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Perjalanan Kami</h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-2">Dari kolam keluarga kecil hingga menjadi pemimpin global.</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex gap-8 overflow-x-auto scrollbar-thin scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-600">
+            <!-- Timeline Item 1 -->
+            <div class="snap-start shrink-0 w-80 relative">
+                <div class="border-t-4 border-primary/30 pt-6 relative">
+                    <div
+                        class="absolute -top-2.5 left-0 w-5 h-5 bg-primary rounded-full border-4 border-white dark:border-slate-900">
+                    </div>
+                    <span class="text-primary font-bold text-lg">2000</span>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Awal mula</h4>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                        Didirikan oleh Joko di sebidang tanah kecil di Solo, dengan satu kolam dan visi untuk
+                        pangan berkelanjutan.
+                    </p>
+                    <div class="mt-4 h-40 w-full rounded-xl overflow-hidden bg-slate-200">
+                        <img alt="Black and white photo of a small fishing boat on a calm lake"
+                            class="w-full h-full object-cover"
+                            data-alt="Vintage black and white photo of a small fishing boat"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLoKJHDbX8iQr_q1FDezlcEUSwmr6NsZNXvm18mo0OdVByEfpYJXCwEQiIQr0vvmD5fZvYtkExmeQu4PjmXsuHG05G5Xv-voZycpQp_Jx8GqQBtzisoUtm0LdDbg7fDpcPtFxSpEcJakQSJMH__SngLEqrPQNKBIB4CiiODgF1V3fplRtf45iydK8vPz0YDSN2WZAcSZy5J-im4Vu7Hw-A6Ivikvgi2pKYUk9HowQfGGszex908NSpwJbTMu4bY-GiyU4Vex9XXCBb" />
+                    </div>
+                </div>
+            </div>
+            <!-- Timeline Item 2 -->
+            <div class="snap-start shrink-0 w-80 relative">
+                <div
+                    class="border-t-4 border-slate-200 dark:border-slate-700 pt-6 relative hover:border-primary/50 transition-colors">
+                    <div
+                        class="absolute -top-2.5 left-0 w-5 h-5 bg-slate-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900">
+                    </div>
+                    <span class="text-slate-500 dark:text-slate-400 font-bold text-lg">2010</span>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Ekspansi</h4>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                        Memperluas area tambak, mempelopori metode baru untuk budidaya lele premium.
+                    </p>
+                    <div class="mt-4 h-40 w-full rounded-xl overflow-hidden bg-slate-200">
+                        <img alt="Aerial view of aquaculture fish farm rings in the ocean"
+                            class="w-full h-full object-cover" data-alt="Aerial view of aquaculture fish farm rings"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBck8b8QwyPUXezd5aQW2wyuKEL5rW6lI7BXeqR8kNwPXMGDUcchLVfUCFLg9wdxoF6likPCNTogd9PYApztDsLe2xZyovZ1Q3ynuD1Vg_dEWE399O2vDm15Xn2YYZrQArZ23hgvl548Vk_oexmi1qX79SPcrVxGmkJJAqW3fwD4Yax7A2ncYJ3K7ot5OgcbhoJEona7yt8pnMrP-gzXNV46JPu43XtllLcYpUrisnmm1YehLNeE-1P3y4chtynN56WOtuLdaA3F1B2" />
+                    </div>
+                </div>
+            </div>
+            <!-- Timeline Item 3 -->
+            <div class="snap-start shrink-0 w-80 relative">
+                <div
+                    class="border-t-4 border-slate-200 dark:border-slate-700 pt-6 relative hover:border-primary/50 transition-colors">
+                    <div
+                        class="absolute -top-2.5 left-0 w-5 h-5 bg-slate-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900">
+                    </div>
+                    <span class="text-slate-500 dark:text-slate-400 font-bold text-lg">2015</span>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Going Green</h4>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                        Berhasil mencapai penggunaan energi terbarukan 100% untuk semua fasilitas di darat dan memperkenalkan sistem pemberian pakan otomatis.
+                    </p>
+                    <div class="mt-4 h-40 w-full rounded-xl overflow-hidden bg-slate-200">
+                        <img alt="Wind turbines near the ocean coast" class="w-full h-full object-cover"
+                            data-alt="Wind turbines on a green coast"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvkcFYLWVCca1mrp6oQkgnmy_dcLty0tncKuBW1W3ue-7O1di3tUzeK2iZKf6ahkZc3-KIxT_Si1Stm3dBuMvHycaXf5BJoXyK4n8C04Z5dN6nqUqSqk15__CAKEn3b84C_LhLdzSR8ntW9ucWLB59QAYNS4q6hsdc10nosiCNy4zcdtYvDZ9cEi5nRu48VYP272KpEZQnTuQnlIAcIQDKZB0mKB4BjJvgVJkCYXsCbSu5zwziNFwFjlWp-qH5_uMsTPme5JCLRv_F" />
+                    </div>
+                </div>
+            </div>
+            <!-- Timeline Item 4 -->
+            <div class="snap-start shrink-0 w-80 relative">
+                <div
+                    class="border-t-4 border-slate-200 dark:border-slate-700 pt-6 relative hover:border-primary/50 transition-colors">
+                    <div
+                        class="absolute -top-2.5 left-0 w-5 h-5 bg-slate-300 dark:bg-slate-600 rounded-full border-4 border-white dark:border-slate-900">
+                    </div>
+                    <span class="text-slate-500 dark:text-slate-400 font-bold text-lg">2025</span>
+                    <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-2">Global Leader</h4>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm leading-relaxed">
+                        Diakui secara global sebagai produsen lele berkualitas terbaik, melayani lebih dari 10.000 pelanggan di seluruh dunia.
+                    </p>
+                    <div class="mt-4 h-40 w-full rounded-xl overflow-hidden bg-slate-200">
+                        <img alt="Chef plating a gourmet fish dish" class="w-full h-full object-cover"
+                            data-alt="Chef plating a gourmet fish dish"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtVH960QeQcx-zkAVs7j436V1TI9v9dJBp7zyxr5BAOUTLg_j74I_Cto3GgadRL4Gx6jERWscOztMqgYG9gApzklLRs2-E7-XUqpXddLrndcx7RMP0cNZSbpgg6-kTL3CJCoZxHz7p0sGKZuTcY_wlCO4sDktpisDGi7UyKp4s9Y26FjK_bROTet4iJWO7Ws-DcvewYU0kokN24NAd_5MsKR_sT0DXvpM-BxulMduMRKRBGv2_5mZ7n7aTQJQk3CzRkaaEd_mszIaF" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Team Section -->
+    <section class="py-20 bg-white dark:bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Temui Para Ahli</h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-4">Para ahli yang berdedikasi di balik Lele Fresh</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-4 shadow-lg">
+                        <img alt="Sarah Jenkins, Chief Marine Biologist"
+                            class="w-full h-80 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Portrait of a smiling woman in professional attire"
+                            src="{% static 'assets/DNR.jpeg' %}">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Dhiya Nailah Rizqya</h3>
+                    <p class="text-primary text-sm font-medium">110225095</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-4 shadow-lg">
+                        <img alt="Mark Thompson, Head of Operations"
+                            class="w-full h-80 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Portrait of a smiling man with glasses"
+                            src="{% static 'assets/RMAG.jpeg'%}">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Rifki Mujahidin Al-Ghazali</h3>
+                    <p class="text-primary text-sm font-medium">0110225054</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-4 shadow-lg">
+                        <img alt="Elena Rodriguez, Sustainability Director"
+                            class="w-full h-80 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Syech Abu"
+                            src="{% static 'assets/SA.jpeg'%}">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Syech Abu</h3>
+                    <p class="text-primary text-sm font-medium">0110225104</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-2xl mb-4 shadow-lg">
+                        <img alt="David Chen, Lead Farmer"
+                            class="w-full h-80 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Portrait of a man in casual business attire"
+                            src="{% static 'assets/BF.png'%}">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Bhilal Fasha</h3>
+                    <p class="text-primary text-sm font-medium">0110225053</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Location / Visit CTA -->
+    <section class="relative py-24 bg-slate-100 dark:bg-slate-800 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10" data-alt="subtle dot pattern background"
+            style="background-image: radial-gradient(#137fec 1px, transparent 1px); background-size: 32px 32px;"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <span class="material-symbols-outlined text-6xl text-primary mb-6">sailing</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Tertarik Menjelajah?</h2>
+            <p class="text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-2xl mx-auto">
+                We believe in transparency. Schedule a guided boat tour of our facilities and see firsthand how we're
+                redefining the future of food.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                    class="bg-blue-400 hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-lg shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-1">
+                    <a href="{% url 'produk' %}">Lihat Produk Kami</a>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

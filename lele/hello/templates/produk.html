@@ -1,0 +1,323 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<main
+    class="bg-background-light dark:bg-background-dark font-display text-text-main dark:text-white transition-colors duration-200">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Hero Section -->
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+            <div class="flex flex-col max-w-[960px] flex-1">
+                <div class="@container">
+                    <div class="flex flex-col-reverse gap-6 py-10 md:flex-row md:items-center md:gap-12">
+                        <div class="flex flex-col gap-6 md:w-1/2">
+                            <div class="flex flex-col gap-3 text-left">
+                                <h1 class="text-4xl md:text-5xl font-black leading-[1.1] tracking-[-0.033em]">
+                                    Solusi Lengkap Perlengkapan Budidaya Lele Anda.
+                                </h1>
+                                <h2
+                                    class="text-sm md:text-base font-normal leading-relaxed text-text-muted dark:text-[#8ababa]">
+                                    Lengkapi kebutuhan budidaya lele Anda dengan pakan, vitamin, obat, dan peralatan berkualitas. Solusi lengkap untuk pertumbuhan lele yang optimal dan hasil panen maksimal.
+                                </h2>
+                            </div>
+                            <button
+                                class="flex w-fit items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-text-main text-base font-bold shadow-md hover:translate-y-[-1px] bg-blue-500 hover:bg-blue-400 text-white transition-transform">
+                                <span class="truncate"><a href="#produk">Shop Now</a></span>
+                            </button>
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl shadow-lg"
+                                data-alt="Fresh catfish fillets displayed on a wooden board with herbs"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZA0gw0oG1b2k48jAaSsOnL_EsL6i2rx57LClsAIYGeIvZLu8ZAaAB_o6v_OnCyUERcoL-g33g312afEBN6tj_6Beuv6EYjkOzT-qLWuZpWl1yBh4nuNOYas2idXQg1URavxw1_OMMYhDF8gXhnnBuzBAHpUM7IjmVlFqdPpWOCiAGoz-y7es54VZS--qNSzEIn9zbE-fu6A4iKYZpUAwxaaQKrIyi43utu7p4ScSqhHTIkZQ6qpbj6mlu5KDTWHa4IMu_8POZYQ");'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Trust Indicators -->
+        <div
+            class="bg-gray-100 dark:bg-card-dark py-12 px-4 md:px-10 lg:px-40 flex justify-center border-y border-[#e7f3f3] dark:border-[#1e3a3a]">
+            <div class="max-w-[960px] w-full grid grid-cols-1 md:grid-cols-3 gap-8 mb-6 mt-2">
+                <div class="flex flex-col items-center text-center gap-3 p-4">
+                    <div
+                        class="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                        <span class="material-symbols-outlined text-3xl">water_drop</span>
+                    </div>
+                    <h3 class="font-bold text-lg">Hasil Fresh</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400">Dipanen setiap hari langsung dari kolam kami untuk menjamin kualitas maksimal.</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-3 p-4">
+                    <div
+                        class="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                        <span class="material-symbols-outlined text-3xl">health_and_safety</span>
+                    </div>
+                    <h3 class="font-bold text-lg">Bebas Antibiotik</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400">Dibudidayakan secara alami tanpa bahan kimia berbahaya atau hormon pertumbuhan, demi keamanan dan kesehatan Anda.</p>
+                </div>
+                <div class="flex flex-col items-center text-center gap-3 p-4">
+                    <div
+                        class="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
+                        <span class="material-symbols-outlined text-3xl">eco</span>
+                    </div>
+                    <h3 id="produk" class="font-bold text-lg">Berkelanjutan</h3>
+                    <p class="text-sm text-text-muted dark:text-gray-400">Praktik budidaya ramah lingkungan yang menjaga kelestarian lingkungan dan ekosistem lokal.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Products Header & Filters -->
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center pt-10 pb-4">
+                <div class="flex flex-col max-w-[960px] flex-1">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 px-4">
+                        <h2 class=" text-[28px] font-bold leading-tight tracking-[-0.015em]">Produk Kami</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Product Grid -->
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center pb-20">
+            <div class="flex flex-col max-w-[960px] flex-1">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
+
+                <!-- 1. Pakan Lele 20kg -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="pakan-lele-20kg"
+                    data-product-name="Pakan Lele"
+                    data-product-size="20 kg"
+                    data-product-price="155000"
+                    data-product-unit="sack">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/6.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Pakan Lele 20 kg</h3>
+                    <p class="text-sm text-gray-500">Pakan berkualitas untuk pertumbuhan optimal.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp155.000 / sack</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 2. Pelet Lele 1kg -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="pelet-lele-1kg"
+                    data-product-name="Pelet Lele"
+                    data-product-size="1 kg"
+                    data-product-price="8000"
+                    data-product-unit="kg">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/12.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Pelet Lele 1 kg</h3>
+                    <p class="text-sm text-gray-500">Pelet padat, tidak cepat mengeruhkan air.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp8.000 / kg</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 3. Vitamin Lele 250ml -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="vitamin-lele-250ml"
+                    data-product-name="Vitamin Lele"
+                    data-product-size="250 ml"
+                    data-product-price="15000"
+                    data-product-unit="botol">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/7.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Vitamin Lele 250 ml</h3>
+                    <p class="text-sm text-gray-500">Menambah daya tahan & nafsu makan.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp15.000 / botol</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 4. Probiotik Lele 1L -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="probiotik-lele-1l"
+                    data-product-name="Probiotik Lele"
+                    data-product-size="1 liter"
+                    data-product-price="50000"
+                    data-product-unit="jeriken">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/8.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Probiotik Lele 1 L</h3>
+                    <p class="text-sm text-gray-500">Menjaga kualitas air kolam.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp50.000 / jeriken</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 5. Bibit Lele -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="bibit-lele-7-9cm"
+                    data-product-name="Bibit Lele"
+                    data-product-size="7–9 cm"
+                    data-product-price="350000"
+                    data-product-unit="1000 ekor">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/13.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Bibit Lele 7–9 cm</h3>
+                    <p class="text-sm text-gray-500">Bibit sehat & siap tebar.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp350.000 / 1000 ekor</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 6. Obat Jamur -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="obat-jamur-100ml"
+                    data-product-name="Obat Anti Jamur"
+                    data-product-size="100 ml"
+                    data-product-price="15000"
+                    data-product-unit="botol">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/11.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Obat Anti Jamur 100 ml</h3>
+                    <p class="text-sm text-gray-500">Cegah jamur & penyakit.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp15.000 / botol</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 7. Obat Kuman -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="obat-kuman-60ml"
+                    data-product-name="Obat Anti Kuman"
+                    data-product-size="60 ml"
+                    data-product-price="40000"
+                    data-product-unit="botol">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/10.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Obat Anti Kuman 60 ml</h3>
+                    <p class="text-sm text-gray-500">Mengatasi infeksi bakteri.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp40.000 / botol</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 8. Paket Kolam 1 -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="paket-kolam-1"
+                    data-product-name="Paket Kolam 1"
+                    data-product-size="Diameter 1"
+                    data-product-price="155000"
+                    data-product-unit="paket">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/2.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Paket Kolam 1</h3>
+                    <p class="text-sm text-gray-500">Paket lengkap budidaya pemula.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp155.000 / paket</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 9. Paket Kolam 2 -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="paket-kolam-2"
+                    data-product-name="Paket Kolam 2"
+                    data-product-size="3 Kolam"
+                    data-product-price="450000"
+                    data-product-unit="paket">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/1.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Paket Kolam 2</h3>
+                    <p class="text-sm text-gray-500">Untuk skala menengah.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp450.000 / paket</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- 10. Paket Kolam 3 -->
+                <div class="group flex flex-col gap-3 p-3 rounded-xl bg-card-light dark:bg-card-dark shadow-sm hover:shadow-md transition-all"
+                    data-product-id="paket-kolam-3"
+                    data-product-name="Paket Kolam 3"
+                    data-product-size="Diameter 3"
+                    data-product-price="350000"
+                    data-product-unit="paket">
+                    <div class="relative w-full aspect-square overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'assets/4.png' %}" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                    <h3 class="text-lg font-bold">Paket Kolam 3</h3>
+                    <p class="text-sm text-gray-500">Paket lengkap skala besar.</p>
+                    </div>
+                    <div class="mt-auto flex justify-between items-center">
+                    <p class="font-bold">Rp350.000 / paket</p>
+                    <button class="add-to-cart-btn h-8 w-8 rounded-lg bg-blue-500 text-white flex items-center justify-center">
+                        <span class="material-symbols-outlined">add</span>
+                    </button>
+                    </div>
+                </div>
+
+                </div>
+
+        <!-- Newsletter & Footer -->
+        <div class="w-full bg-[#e7f3f3] dark:bg-[#1a2c2c] mt-auto">
+            <div class="px-4 md:px-10 lg:px-40 flex justify-center py-16">
+                <div class="flex flex-col md:flex-row max-w-[960px] flex-1 items-center justify-between gap-8">
+                    <div class="flex flex-col gap-2 md:w-1/2">
+                        <h3 class="text-2xl font-bold text-text-main dark:text-white">Get Fresh Updates</h3>
+                        <p class="text-text-muted dark:text-gray-400">Berlangganan untuk update lebih lanjut mengenai produk dan diskon eksklusif.</p>
+                    </div>
+                    <div class="flex w-full md:w-1/2 max-w-md gap-2">
+                        <input
+                            class="flex-1 h-12 rounded-lg border-0 bg-white dark:bg-background-dark px-4 text-sm text-text-main focus:ring-2 focus:ring-primary shadow-sm"
+                            placeholder="Enter your email" type="email" />
+                        <button
+                            class="bg-blue-500 text-text-main font-bold px-6 h-12 rounded-lg hover:brightness-105 hover:bg-blue-400 text-white transition-all">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="{% static 'js/produk.js' %}"></script>
+{% endblock %}

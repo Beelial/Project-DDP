@@ -1,0 +1,28 @@
+{% load static %}
+{% block content %}
+<main class="pt-10">
+    <header class="fixed top-0 left-0 w-full bg-white shadow z-50 py-2">
+        <div class="w-full mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between px-6">
+            <a class="text=2xl flex items-center font-black" href="#">
+            <span class="mr-2 w-20"><img src="{% static 'assets/5.png'%}"></span>
+            <span class="text-2xl">Lele Fresh</span>
+        </a>
+        <input class="peer hidden mt-4 sm:mt-0" type="checkbox" id="navbar">
+        <label class="sm:hidden cursor-pointer absolute right-6 top-5" for="navbar">
+            <div class="w-5 h-1 bg-gray-600 mb-1 rounded-full"></div>
+            <div class="w-5 h-1 bg-gray-600 mb-1 rounded-full"></div>
+            <div class="w-5 h-1 bg-gray-600 rounded-full"></div>
+        </label>
+        
+        <nav class="block w-full sm:w-auto mt-4 sm:mt-0 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0 translate-y-4 peer-checked:max-h-96 peer-checked:opacity-100 peer-checked:translate-y-0 sm:max-h-full sm:opacity-100 sm:translate-y-0 sm:overflow-visible">
+            <ul class="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 sm:mb-1 ">
+                <li class=""><a class="block px-4 py-2 rounded-lg bg-white hover:bg-blue-100 hover:text-blue-600 font-semibold sm:hover:bg-blue-10" href="{% url 'home' %}">Beranda</a></li>
+                <li class=""><a class="block px-4 py-2 rounded-lg bg-white hover:bg-blue-100 hover:text-blue-600 font-semibold sm:hover:bg-blue-10" href="{% url 'tentang' %}">Tentang Kami</a></li>
+                <li class=""><a class="block px-4 py-2 rounded-lg bg-white hover:bg-blue-100 hover:text-blue-600 font-semibold sm:hover:bg-blue-10" href="{% url 'produk' %}">Produk</a></li>
+                <li class="mb-4 sm:mb-0 mt-2"><a class="border-2 px-6 py-2 rounded-xl hover:bg-blue-400 text-white border-blue-500 font-semibold text-blue-600 bg-blue-600" href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+  </main>
+  {% endblock %}
