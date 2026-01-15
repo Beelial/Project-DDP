@@ -21,15 +21,27 @@ def produk(request):
 def login_view(request):
     if request.user.is_authenticated:
         return redirect('home')
+
     if request.method == 'POST':
-        username = request.POST.get('username')
+        email = request.POST.get('email')
         password = request.POST.get('password')
-        user = authenticate(request, username=username, password=password)
-        if user:
+
+        try:
+            user_obj = User.objects.get(email=email)
+            user = authenticate(
+                request,
+                username=user_obj.username,
+                password=password
+            )
+        except User.DoesNotExist:
+            user = None
+
+        if user is not None:
             login(request, user)
             return redirect('home')
         else:
             messages.error(request, 'Email atau Password salah!')
+
     return render(request, 'login.html')
 
 def register(request):
@@ -47,6 +59,10 @@ def register(request):
             return redirect('register')
 
         if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username sudah digunakan!')
+            return redirect('register')
+
+        if User.objects.filter(email=email).exists():
             messages.error(request,  'Email sudah digunakan!')
             return redirect('register')
 
@@ -125,6 +141,7 @@ def process_payment(request):
 
         total = sum(item.price * item.quantity for item in cart_items)
 
+        # 1️⃣ buat order
         order = Order.objects.create(
             user=request.user,
             total=total,
@@ -132,6 +149,7 @@ def process_payment(request):
             status='BERHASIL'
         )
 
+        # 2️⃣ simpan item
         for item in cart_items:
             OrderItem.objects.create(
                 order=order,
@@ -140,6 +158,7 @@ def process_payment(request):
                 quantity=item.quantity
             )
 
+        # 3️⃣ kosongkan cart
         cart_items.delete()
 
         return redirect('payment_result', order_id=order.id)
