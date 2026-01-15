@@ -88,6 +88,10 @@ def edit_profile_view(request):
             if new_password:
                 user.set_password(new_password)
 
+        if User.objects.filter(username=request.POST.get('username')).exclude(id=user.id).exists():
+            messages.error(request, 'Username sudah digunakan')
+        return redirect('edit_profile')
+    
         user.save()
         messages.success(request, 'Profil berhasil diperbarui')
         return render(request, 'edit_profile.html', {
