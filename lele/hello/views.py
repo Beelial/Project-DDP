@@ -47,10 +47,6 @@ def register(request):
             return redirect('register')
 
         if User.objects.filter(username=username).exists():
-            messages.error(request,  'Username sudah terdaftar!')
-            return redirect('register')
-
-        if User.objects.filter(username=username).exists():
             messages.error(request,  'Email sudah digunakan!')
             return redirect('register')
 
