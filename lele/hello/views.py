@@ -90,7 +90,7 @@ def edit_profile_view(request):
 
         if User.objects.filter(username=request.POST.get('username')).exclude(id=user.id).exists():
             messages.error(request, 'Username sudah digunakan')
-        return redirect('edit_profile')
+            return redirect('edit_profile')
     
         user.save()
         messages.success(request, 'Profil berhasil diperbarui')
