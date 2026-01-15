@@ -46,8 +46,12 @@ def register(request):
             messages.error(request, 'Password tidak sama!')
             return redirect('register')
         
-        if User.objects.filter(username=email).exists():
+        if User.objects.filter(email=email).exists():
             messages.error(request, 'Email sudah terdaftar!')
+            return redirect('register')
+            
+        if User.objects.filter(username=username).exists():
+            messages.error(request, 'Username sudah digunakan!')
             return redirect('register')
         
         User.objects.create_user(
