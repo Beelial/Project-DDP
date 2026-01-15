@@ -76,10 +76,6 @@ def edit_profile_view(request):
             messages.error(request, 'Username dan email tidak boleh kosong')
             return redirect('edit_profile')
 
-        if User.objects.exclude(id=user.id).filter(username__iexact=new_username).exists():
-            messages.error(request, 'Username sudah digunakan orang lain')
-            return redirect('edit_profile')
-
         if User.objects.exclude(id=user.id).filter(email__iexact=new_email).exists():
             messages.error(request, 'Email sudah digunakan orang lain')
             return redirect('edit_profile')
