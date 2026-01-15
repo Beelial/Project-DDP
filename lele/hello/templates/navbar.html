@@ -14,15 +14,111 @@
             <div class="w-5 h-1 bg-gray-600 rounded-full"></div>
         </label>
         
-        <nav class="block w-full sm:w-auto mt-4 sm:mt-0 transition-all duration-300 ease-in-out max-h-0 overflow-hidden opacity-0 translate-y-4 peer-checked:max-h-96 peer-checked:opacity-100 peer-checked:translate-y-0 sm:max-h-full sm:opacity-100 sm:translate-y-0 sm:overflow-visible">
+        <nav class="block w-full sm:w-auto mt-4 sm:mt-0 transition-all duration-300 ease-in-out max-h-0 opacity-0 translate-y-4 overflow-hidden peer-checked:max-h-[calc(100vh-80px)] peer-checked:opacity-100 peer-checked:translate-y-0 peer-checked:overflow-y-auto sm:max-h-full sm:opacity-100 sm:translate-y-0 sm:overflow-visible">
             <ul class="flex flex-col gap-y-4 sm:flex-row sm:gap-x-8 sm:mb-1 ">
                 <li class=""><a class="block px-4 py-2 rounded-lg bg-white hover:bg-blue-100 hover:text-blue-600 font-semibold sm:hover:bg-blue-10" href="{% url 'home' %}">Beranda</a></li>
                 <li class=""><a class="block px-4 py-2 rounded-lg bg-white hover:bg-blue-100 hover:text-blue-600 font-semibold sm:hover:bg-blue-10" href="{% url 'tentang' %}">Tentang Kami</a></li>
                 <li class=""><a class="block px-4 py-2 rounded-lg bg-white hover:bg-blue-100 hover:text-blue-600 font-semibold sm:hover:bg-blue-10" href="{% url 'produk' %}">Produk</a></li>
-                <li class="mb-4 sm:mb-0 mt-2"><a class="border-2 px-6 py-2 rounded-xl hover:bg-blue-400 text-white border-blue-500 font-semibold text-blue-600 bg-blue-600" href="{% url 'login' %}">Login</a></li>
+                {% if user.is_authenticated %}
+
+                <!-- MOBILE -->
+                <li class="sm:hidden border-t pt-4 mt-4">
+                <div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-50">
+                    <div
+                    class="w-10 h-10 rounded-full bg-blue-600 text-white
+                            flex items-center justify-center font-bold text-lg">
+                    {{ user.username|slice:":1"|upper }}
+                    </div>
+
+                    <div class="leading-tight">
+                    <p class="font-bold text-gray-800">
+                        {{ user.username }}
+                    </p>
+                    <p class="text-sm text-gray-500">
+                        {{ user.email }}
+                    </p>
+                    </div>
+                </div>
+
+                <a href="{% url 'edit_profile' %}"
+                    class="block mt-3 px-4 py-2 rounded-lg
+                            hover:bg-blue-100 hover:text-blue-600 font-semibold">
+                    Edit Profil
+                </a>
+
+                <a href="{% url 'payment_history' %}"
+                    class="block px-4 py-2 rounded-lg
+                            hover:bg-blue-100 hover:text-blue-600 font-semibold">
+                    Riwayat Pemesanan
+                </a>
+
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button
+                    class="w-full text-left px-4 py-2 mt-2
+                            bg-blue-600 text-white rounded-lg font-semibold cursor-pointer">
+                    Logout
+                    </button>
+                </form>
+                </li>
+
+                <li class="relative hidden sm:flex items-center">
+                <button
+                    id="userMenuBtn"
+                    class="flex items-center gap-2 px-4 py-2 rounded-lg
+                        bg-white font-semibold
+                        hover:bg-blue-100 transition cursor-pointer">
+                    <div
+                    class="w-8 h-8 rounded-full bg-blue-600 text-white
+                            flex items-center justify-center text-sm font-bold
+                            shrink-0"
+                    >
+                    {{ user.username|slice:":1"|upper }}
+                    </div>
+
+                    <span class="hidden sm:block leading-none">
+                    {{ user.username }}
+                    </span>
+                </button>
+
+                <div id="userMenu"
+                    class="absolute right-0 top-full mt-2 w-52
+                        bg-white border rounded-lg shadow-lg
+                        hidden z-50">
+                    <a href="{% url 'edit_profile' %}"
+                    class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 font-medium">
+                    Edit Profil</a>
+
+                    <a href="{% url 'payment_history' %}"
+                    class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 font-medium">
+                    Riwayat Pemesanan</a>
+
+
+                    <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button
+                        class="w-full text-left px-4 py-2
+                            bg-blue-600 text-white font-semibold
+                            hover:bg-blue-500 rounded-b-lg cursor-pointer">
+                        Logout
+                    </button>
+                    </form>
+                </div>
+                </li>
+                {% endif %}
             </ul>
         </nav>
         </div>
     </header>
   </main>
+  <script>
+  const navToggle = document.getElementById('navbar');
+
+  document.querySelectorAll('nav a, nav button').forEach(el => {
+    el.addEventListener('click', () => {
+      if (navToggle.checked) navToggle.checked = false;
+    });
+  });
+</script>
+
   {% endblock %}

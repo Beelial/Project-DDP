@@ -25,7 +25,14 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/home/', permanent=False)),
     path('tentang/', tentang, name='tentang'),
     path('produk/', produk, name='produk'),
-    path('login/', login, name='login'),
+    path('login/', login_view, name='login'),
     path('register/', register, name='register'),
-
+    path('logout/', logout_view, name='logout'),
+    path('profile/', edit_profile_view, name='edit_profile'),
+    path('payment/', process_payment, name='process_payment'),
+    path('payment_history/', payment_history, name='payment_history'),
+    path('payment/result/<int:order_id>/', payment_result, name='payment_result'),
+    path('api/cart/', cart_list),
+    path('api/cart/add/', cart_add),
+    path('api/cart/update/', cart_update),
 ]

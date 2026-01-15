@@ -1,0 +1,75 @@
+{% extends "index.html" %}
+{% load humanize %}
+{% block content %}
+
+<main class="pt-24 px-4 md:px-10 lg:px-40 bg-background-light min-h-screen">
+  <div class="max-w-[960px] mx-auto">
+
+    <h1 class="text-3xl font-black mb-6">Data Pemesanan</h1>
+
+    {% if orders %}
+      <div class="space-y-6">
+
+        {% for order in orders %}
+        <div class="bg-white rounded-2xl shadow p-6">
+
+          <!-- HEADER ORDER -->
+          <div class="flex justify-between items-center mb-4">
+            <div>
+              <p class="font-bold text-lg">
+                Order #{{ order.id }}
+              </p>
+              <p class="text-sm text-gray-500">
+                {{ order.created_at|date:"d M Y H:i" }}
+              </p>
+            </div>
+
+            <span class="px-3 py-1 rounded-full text-sm font-semibold
+              {% if order.status == 'BERHASIL' %}
+                bg-green-100 text-green-700
+              {% else %}
+                bg-yellow-100 text-yellow-700
+              {% endif %}
+            ">
+              {{ order.status }}
+            </span>
+          </div>
+
+          <!-- ITEM LIST -->
+          <div class="divide-y">
+            {% for item in order.items.all %}
+            <div class="flex justify-between py-2 text-sm">
+              <span>
+                {{ item.product_name }} × {{ item.quantity }}
+              </span>
+              <span>
+                Rp {{ item.subtotal|intcomma }}
+              </span>
+            </div>
+            {% endfor %}
+          </div>
+
+          <!-- FOOTER -->
+          <div class="flex justify-between items-center mt-4 font-bold">
+            <span>Metode: {{ order.method|upper }}</span>
+            <span class="text-blue-600 text-lg">
+              Rp {{ order.total|intcomma }}
+            </span>
+          </div>
+
+        </div>
+        {% endfor %}
+
+      </div>
+    {% else %}
+      <div class="bg-white p-10 rounded-2xl text-center shadow">
+        <p class="text-gray-500 text-lg">
+          Belum ada transaksi pemesanan.
+        </p>
+      </div>
+    {% endif %}
+
+  </div>
+</main>
+
+{% endblock %}

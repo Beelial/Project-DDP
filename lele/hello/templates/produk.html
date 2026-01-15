@@ -299,25 +299,67 @@
 
                 </div>
 
-        <!-- Newsletter & Footer -->
         <div class="w-full bg-[#e7f3f3] dark:bg-[#1a2c2c] mt-auto">
             <div class="px-4 md:px-10 lg:px-40 flex justify-center py-16">
                 <div class="flex flex-col md:flex-row max-w-[960px] flex-1 items-center justify-between gap-8">
                     <div class="flex flex-col gap-2 md:w-1/2">
-                        <h3 class="text-2xl font-bold text-text-main dark:text-white">Get Fresh Updates</h3>
-                        <p class="text-text-muted dark:text-gray-400">Berlangganan untuk update lebih lanjut mengenai produk dan diskon eksklusif.</p>
+                        <h3 class="text-2xl font-bold text-text-main dark:text-white">Dapatkan Hasil Segar</h3>
+                        <p class="text-text-muted dark:text-gray-400">Punya kode promo? Tukarkan sekarang!</p>
                     </div>
                     <div class="flex w-full md:w-1/2 max-w-md gap-2">
                         <input
                             class="flex-1 h-12 rounded-lg border-0 bg-white dark:bg-background-dark px-4 text-sm text-text-main focus:ring-2 focus:ring-primary shadow-sm"
-                            placeholder="Enter your email" type="email" />
+                            placeholder="Masukkan Kode Promo" type="text" />
                         <button
-                            class="bg-blue-500 text-text-main font-bold px-6 h-12 rounded-lg hover:brightness-105 hover:bg-blue-400 text-white transition-all">Subscribe</button>
+                            class="bg-blue-500 text-text-main font-bold px-6 h-12 rounded-lg hover:brightness-105 hover:bg-blue-400 text-white transition-all cursor-pointer">Tukarkan</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
+<div id="payment-modal"
+     class="hidden fixed inset-0 bg-black/40 z-[10000] flex items-center justify-center">
+
+  <div class="bg-white w-full max-w-xl rounded-2xl p-6 relative">
+
+    <button id="close-payment"
+            class="absolute top-4 right-4 text-xl">✖</button>
+
+    <h2 class="text-xl font-bold mb-4">Checkout</h2>
+
+    <div id="payment-items" class="space-y-4 mb-4"></div>
+
+    <div class="font-bold mb-4">
+      Total: Rp <span id="payment-total">0</span>
+    </div>
+
+    <form method="POST" action="{% url 'process_payment' %}" id="payment-form">
+      {% csrf_token %}
+
+      <input name="name" value="{{ request.user.get_full_name|default:request.user.username }}" readonly class="w-full border p-2 mb-2 bg-gray-100 cursor-default" onmousedown="return false;">
+      <input name="email" type="email" value="{{ request.user.email }}" readonly class="w-full border p-2 mb-2 bg-gray-100 cursor-default" onmousedown="return false;">
+
+      <select name="method" required class="w-full border p-2 mb-2 cursor-pointer">
+        <option value="">Pilih Metode</option>
+        <option value="transfer">Transfer</option>
+        <option value="ewallet">E-Wallet</option>
+      </select>
+
+      <button type="submit"
+              class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold cursor-pointer">
+        Proses Pembayaran
+      </button>
+    </form>
+
+  </div>
+</div>
+
+
+<script>
+    window.IS_AUTHENTICATED = '{{ request.user.is_authenticated|yesno:"true,false" }}'.toLowerCase() === "true";
+    window.LOGIN_URL = "{% url 'login' %}";
+</script>
+
 <script src="{% static 'js/produk.js' %}"></script>
 {% endblock %}

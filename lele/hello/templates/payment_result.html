@@ -1,0 +1,86 @@
+{% extends 'index.html' %}
+{% load humanize %}
+{% load static %}
+{% block content %}
+
+<main class="min-h-screen bg-[#f6fbfb] flex items-center justify-center px-4">
+
+  <div class="w-full max-w-xl bg-white rounded-2xl shadow-lg p-8 text-center">
+
+    <!-- ICON -->
+    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center
+                rounded-full bg-green-100 text-green-600">
+      <span class="material-symbols-outlined text-4xl">
+        check_circle
+      </span>
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="text-2xl font-black mb-2">
+      Pembayaran Berhasil 🎉
+    </h1>
+
+    <p class="text-gray-500 mb-6">
+      Terima kasih telah berbelanja di <b>Lele Fresh</b>
+    </p>
+
+    <!-- DETAIL CARD -->
+    <div class="border rounded-xl p-4 text-left space-y-2 mb-6">
+
+      <div class="flex justify-between">
+        <span class="text-gray-500">Metode</span>
+        <span class="font-bold capitalize">
+          {{ order.method }}
+        </span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="text-gray-500">Total Pembayaran</span>
+        <span class="font-bold text-blue-600">
+          Rp {{ order.total|intcomma }}
+        </span>
+      </div>
+
+    </div>
+
+    <!-- LIST PRODUK -->
+    <div class="text-left space-y-3 mb-6">
+      <h3 class="font-bold text-lg">Ringkasan Produk</h3>
+
+      {% for item in order.items.all %}
+      <div class="flex justify-between border-b pb-2">
+        <div>
+          <p class="font-semibold">{{ item.product_name }}</p>
+          <p class="text-sm text-gray-500">
+            {{ item.quantity }} × Rp {{ item.price|intcomma }}
+          </p>
+        </div>
+
+        <div class="font-bold">
+          Rp {{ item.subtotal|intcomma }}
+        </div>
+      </div>
+      {% empty %}
+        <p class="text-gray-400">Tidak ada item</p>
+      {% endfor %}
+    </div>
+
+    <!-- ACTION -->
+    <div class="flex gap-3">
+      <a href="{% url 'produk' %}"
+         class="flex-1 bg-blue-600 text-white py-3 rounded-xl font-bold
+                hover:bg-blue-500 transition">
+        Belanja Lagi
+      </a>
+
+      <a href="{% url 'payment_history' %}"
+         class="flex-1 border py-3 rounded-xl font-bold text-center">
+        Riwayat Pemesanan
+      </a>
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
