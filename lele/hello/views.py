@@ -35,7 +35,7 @@ def login_view(request):
 def register(request):
     if request.user.is_authenticated:
         return redirect('home')
-    
+
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
@@ -45,15 +45,15 @@ def register(request):
         if password != password2:
             messages.error(request, 'Password tidak sama!')
             return redirect('register')
-        
-        if User.objects.filter(email=email).exists():
-            messages.error(request, 'Email sudah terdaftar!')
-            return redirect('register')
-            
+
         if User.objects.filter(username=username).exists():
-            messages.error(request, 'Username sudah digunakan!')
+            messages.error(request,  'Username sudah terdaftar!')
             return redirect('register')
-        
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request,  'Email sudah digunakan!')
+            return redirect('register')
+
         User.objects.create_user(
             username=username,
             email=email,
@@ -73,13 +73,28 @@ def edit_profile_view(request):
     user = request.user
 
     if request.method == 'POST':
-        user.username = request.POST.get('username')
-        user.email = request.POST.get('email')
+        new_username = request.POST.get('username', '').strip().lower()
+        new_email = request.POST.get('email', '').strip().lower()
 
-        # kalau toggle dicentang
+        if not new_username or not new_email:
+            messages.error(request, 'Username dan email tidak boleh kosong')
+            return redirect('edit_profile')
+
+        if User.objects.exclude(id=user.id).filter(username__iexact=new_username).exists():
+            messages.error(request, 'Username sudah digunakan orang lain')
+            return redirect('edit_profile')
+
+        if User.objects.exclude(id=user.id).filter(email__iexact=new_email).exists():
+            messages.error(request, 'Email sudah digunakan orang lain')
+            return redirect('edit_profile')
+
+        user.username = new_username
+        user.email = new_email
+
+        new_password = None
         if request.POST.get('change_password'):
-            new_password = request.POST.get('new_password')
-            confirm_password = request.POST.get('confirm_password')
+            new_password = request.POST.get('new_password', '').strip()
+            confirm_password = request.POST.get('confirm_password', '').strip()
 
             if new_password != confirm_password:
                 messages.error(request, 'Password tidak sama')
@@ -88,15 +103,14 @@ def edit_profile_view(request):
             if new_password:
                 user.set_password(new_password)
 
-        if User.objects.filter(username=request.POST.get('username')).exclude(id=user.id).exists():
-            messages.error(request, 'Username sudah digunakan')
-            return redirect('edit_profile')
-    
         user.save()
+
+        if new_password:
+            from django.contrib.auth import update_session_auth_hash
+            update_session_auth_hash(request, user)
+
         messages.success(request, 'Profil berhasil diperbarui')
-        return render(request, 'edit_profile.html', {
-            'redirect_home': True
-        })
+        return render(request, 'edit_profile.html', {'redirect_home': True})
 
     return render(request, 'edit_profile.html')
 
@@ -119,7 +133,6 @@ def process_payment(request):
 
         total = sum(item.price * item.quantity for item in cart_items)
 
-        # 1️⃣ buat order
         order = Order.objects.create(
             user=request.user,
             total=total,
@@ -127,7 +140,6 @@ def process_payment(request):
             status='BERHASIL'
         )
 
-        # 2️⃣ simpan item
         for item in cart_items:
             OrderItem.objects.create(
                 order=order,
@@ -136,7 +148,6 @@ def process_payment(request):
                 quantity=item.quantity
             )
 
-        # 3️⃣ kosongkan cart
         cart_items.delete()
 
         return redirect('payment_result', order_id=order.id)
@@ -220,7 +231,7 @@ def cart_update(request):
     item.quantity = qty
     item.save()
 
-    
+
 
     total = sum(
         i.price * i.quantity
